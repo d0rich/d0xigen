@@ -17,11 +17,13 @@ const { data: doc } = await useAsyncData('page-data' + route.path, () => {
 </script>
 
 <template>
-  <NuxtLayout>
-    <ContentRenderer v-if="doc && doc._type === 'markdown'" :value="doc">
-      <ContentRendererMarkdown :value="doc" class="d-article" />
-    </ContentRenderer>
-  </NuxtLayout>
+  <div>
+    <NuxtLayout>
+      <ContentRenderer v-if="doc && doc._type === 'markdown'" :value="doc" tag="article">
+        <ContentRendererMarkdown :value="doc" class="d-article" />
+      </ContentRenderer>
+    </NuxtLayout>
+  </div>
 </template>
 
 <style>
