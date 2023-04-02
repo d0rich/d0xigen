@@ -22,9 +22,9 @@ const isActive = computed(() => {
   if (path === '/') return route.path === '/'
   return route.path.startsWith(path)
 })
-const isExact = computed(() => {
-  return route.path === props.navItem._path
-})
+// const isExact = computed(() => {
+//   return route.path === props.navItem._path
+// })
 const haveChildren = computed(() => {
   return !!props.navItem.children && !!props.navItem.children.length
 })
@@ -37,29 +37,20 @@ onBeforeMount(() => {
 <template>
   <li>
     <div
-      class="w-full flex items-center pl-5 py-1 border-r-2 hover:bg-gray-50 transition-colors"
-      :class="{
-        'border-accent': isActive,
-        'bg-tertiary-50': isExact,
-        'border-accent-50': !isActive
-      }"
+      class="w-full flex items-center pl-5 py-1 transition-colors"
     >
-      <Icon
-        v-if="haveChildren"
-        name="heroicons:chevron-right"
-        class="w-4 h-4 -ml-4 pr-1 transition-transform hover:cursor-pointer"
-        :class="{ 'rotate-90': showChildren }"
-        @click="showChildren = !showChildren"
-      />
-      <NuxtLink
-        :to="navItem._path"
-        class="w-full"
-        @click="showContentTree = false"
-      >
-        <div>
-          {{ navItem.title }}
-        </div>
-      </NuxtLink>
+      <DBtn tag="button" class="w-4 h-4 -ml-4 pr-1 " @click="showChildren = !showChildren">
+        <Icon
+          v-if="haveChildren"
+          name="heroicons:chevron-right"
+          class="transition-transform"
+          :class="{ 'rotate-90': showChildren }"
+        />
+      </DBtn>
+
+      <DBtn :to="navItem._path" @click="showContentTree = false" highlight="negative-list-item">
+        {{ navItem.title }}
+      </DBtn>
     </div>
     <ul v-show="haveChildren && showChildren">
       <DLayoutContentNavigationItem
