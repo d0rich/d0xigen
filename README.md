@@ -1,42 +1,18 @@
-# Content v2 Minimal Starter
+# @d0rich/docs-theme
 
-Look at the [Content documentation](https://content-v2.nuxtjs.org/) to learn more.
+Nuxt 3 theme for [d0rich](https://github.com/d0rich) documentation sites.
 
-## Setup
-
-Make sure to install the dependencies:
+## Installation
 
 ```bash
-# yarn
-yarn install
-
-# npm
-npm install
-
-# pnpm
-pnpm install --shamefully-hoist
+npm i @d0rich/docs-theme
 ```
 
-## Development Server
+## Usage
 
-Start the development server on http://localhost:3000
-
-```bash
-npm run dev
+```ts
+// nuxt.config.ts
+export default defineNuxtConfig({
+  extends: ['@d0rich/docs-theme']
+})
 ```
-
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment) for more information.
