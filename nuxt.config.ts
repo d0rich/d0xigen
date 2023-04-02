@@ -17,6 +17,12 @@ export default defineNuxtConfig({
   modules: ['@nuxt/content'],
   content: {
     documentDriven: true,
+    highlight: {
+      theme: {
+        default: 'github-light',
+        dark: 'one-dark-pro'
+      }
+    },
     // sources: {
     //   fa: {
     //     prefix: '/', // All contents inside this source will be prefixed with `/fa`
