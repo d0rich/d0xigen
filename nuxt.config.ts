@@ -7,7 +7,7 @@ export default defineNuxtConfig({
       mode: 'out-in'
     }
   },
-  //css: ['assets/css/theme.css'],
+  // css: ['assets/css/theme.css'],
   runtimeConfig: {
     public: {
       isDev: process.env.NODE_ENV === 'development',

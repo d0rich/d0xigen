@@ -1,3 +1,3 @@
 export const useDocsLayoutState = () => ({
-  showContentTree: useState('layout/docs/showContentTree', () => true),
+  showContentTree: useState('layout/docs/showContentTree', () => true)
 })

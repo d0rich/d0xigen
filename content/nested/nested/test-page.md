@@ -1,4 +1,4 @@
-# @d0rich/docs-theme @d0rich/docs-theme
+# 😃@d0rich/docs-theme @d0rich/docs-theme
 
 Nuxt 3 theme for [d0rich](https://github.com/d0rich) documentation sites.
 

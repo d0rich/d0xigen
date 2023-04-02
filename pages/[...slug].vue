@@ -19,7 +19,11 @@ const { data: doc } = await useAsyncData('page-data' + route.path, () => {
 <template>
   <div>
     <NuxtLayout>
-      <ContentRenderer v-if="doc && doc._type === 'markdown'" :value="doc" tag="article">
+      <ContentRenderer
+        v-if="doc && doc._type === 'markdown'"
+        :value="doc"
+        tag="article"
+      >
         <ContentRendererMarkdown :value="doc" class="d-article" />
       </ContentRenderer>
     </NuxtLayout>

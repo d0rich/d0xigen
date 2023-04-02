@@ -4,7 +4,7 @@ const { showContentTree } = useDocsLayoutState()
 
 <template>
   <DLayoutHeader />
-  <div class="pt-24 flex mx-auto w-fit flex-col-reverse md:flex-row">
+  <div class="pt-24 flex justify-around w-fit flex-col-reverse md:flex-row">
     <aside
       class="w-72 px-3 fixed z-20 h-full bg-neutral-50 top-0 transition-all md:h-auto md:relative md:bg-inherit md:left-0"
       :class="{
@@ -12,7 +12,7 @@ const { showContentTree } = useDocsLayoutState()
         'left-0': showContentTree
       }"
     >
-      <nav class="sticky top-32 overflow-hidden">
+      <nav class="sticky top-32">
         <ContentNavigation v-slot="{ navigation }">
           <ul>
             <DLayoutContentNavigationItem
@@ -24,7 +24,7 @@ const { showContentTree } = useDocsLayoutState()
         </ContentNavigation>
       </nav>
     </aside>
-    <main>
+    <main class="min-h-[150vh]">
       <slot />
     </main>
   </div>

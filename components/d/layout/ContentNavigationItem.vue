@@ -10,13 +10,6 @@ const route = useRoute()
 
 const { showContentTree } = useDocsLayoutState()
 const showChildren = ref(false)
-const link = computed(() => {
-  if (props.navItem?.children?.length) {
-    return props.navItem.children[0]._path
-  } else {
-    return props.navItem._path
-  }
-})
 const isActive = computed(() => {
   const path = props.navItem._path
   if (path === '/') return route.path === '/'
@@ -36,38 +29,43 @@ onBeforeMount(() => {
 
 <template>
   <li>
-    <div
-      class="w-full flex items-center pl-5 py-1 transition-colors"
-    >
-      <DBtn tag="button" class="w-4 h-4 -ml-4 pr-1 " @click="showChildren = !showChildren">
+    <div class="grid grid-cols-[24px_1fr] items-start gap-x-4 py-1 transition-colors">
+      <DBtn
+        tag="button"
+        v-if="haveChildren"
+        no-rotate
+        @click="showChildren = !showChildren"
+      >
         <Icon
-          v-if="haveChildren"
-          name="heroicons:chevron-right"
-          class="transition-transform"
-          :class="{ 'rotate-90': showChildren }"
+          :name="
+            !showChildren ? 'ic:sharp-chevron-right' : 'ic:sharp-expand-more'
+          "
+          class="text-2xl"
         />
       </DBtn>
+      <div v-else />
 
-      <DBtn :to="navItem._path" @click="showContentTree = false" highlight="negative-list-item">
-        {{ navItem.title }}
-      </DBtn>
+      <div>
+        <DBtn
+          :to="navItem._path"
+          highlight="negative-list-item"
+          no-rotate
+          text-transform="none"
+          @click="showContentTree = false"
+        >
+          {{ navItem.title }}
+        </DBtn>
+        <ul v-show="haveChildren && showChildren">
+          <DLayoutContentNavigationItem
+            v-for="child in navItem.children"
+            :key="child._path"
+            :nav-item="child"
+            :parent-path="navItem._path"
+          />
+        </ul>
+      </div>
+
     </div>
-    <ul v-show="haveChildren && showChildren">
-      <DLayoutContentNavigationItem
-        v-for="child in navItem.children"
-        :key="child._path"
-        :nav-item="child"
-        :parent-path="navItem._path"
-      />
-    </ul>
+
   </li>
 </template>
-
-<style scoped>
-.active {
-  @apply border-r-4 border-green-400;
-}
-li ul {
-  @apply pl-3;
-}
-</style>

@@ -10,5 +10,4 @@ html {
 body {
   @apply dark:bg-neutral-800 dark:text-gray-100;
 }
-
 </style>
