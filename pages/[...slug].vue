@@ -5,6 +5,9 @@ export default {
 </script>
 
 <script setup lang="ts">
+definePageMeta({
+  layout: 'docs'
+})
 const route = useRoute()
 // const toc = useToc()
 const { data: doc } = await useAsyncData('page-data' + route.path, () => {
