@@ -7,10 +7,7 @@ export default defineNuxtConfig({
       mode: 'out-in'
     }
   },
-  css: ['assets/css/theme.css'],
-  imports: {
-    dirs: ['composables/*/index.{ts,js,mjs,mts}']
-  },
+  //css: ['assets/css/theme.css'],
   runtimeConfig: {
     public: {
       isDev: process.env.NODE_ENV === 'development',
@@ -18,17 +15,16 @@ export default defineNuxtConfig({
     }
   },
   modules: ['@nuxt/content'],
-  nitro: {
-    prerender: {
-      routes: [
-        '/api/resume/Nikolay_Dorofeev-Software Engineer.pdf',
-        '/api/resume/Nikolay_Dorofeev-Node.js Developer.pdf',
-        '/api/resume/Nikolay_Dorofeev-Vue Frontend Developer.pdf',
-        '/api/resume/Nikolay_Dorofeev-System Analyst.pdf'
-      ]
-    }
-  },
   content: {
+    documentDriven: true,
+    // sources: {
+    //   fa: {
+    //     prefix: '/', // All contents inside this source will be prefixed with `/fa`
+    //     driver: 'fs',
+    //     base: './',
+    //     ignore: /.*(?<!README\.md)$/
+    //   }
+    // },
     markdown: {
       rehypePlugins: {
         'rehype-external-links': {
