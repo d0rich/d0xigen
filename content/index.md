@@ -8,6 +8,12 @@ Nuxt 3 theme for [d0rich](https://github.com/d0rich) documentation sites.
 npm i @d0rich/d0cs
 ```
 
+### Third level
+
+### Another third level
+
+#### Forth level
+
 ## Usage
 
 ```ts

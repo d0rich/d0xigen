@@ -24,21 +24,23 @@ export default defineComponent({
 
 <template>
   <li>
-    <a :href="'#' + link.id">
-      <div
-        class="py-1 transition-all"
-        :class="{
-          'text-green-400': isActive,
-          'font-semibold': link.depth === 2,
-          'pl-2': link.depth === 3,
-          'pl-3': link.depth === 4,
-          'pl-4': link.depth === 5,
-          'pl-5': link.depth >= 6
-        }"
-      >
-        {{ link.text }}
-      </div>
-    </a>
+    <DBtn
+      :to="'#' + link.id"
+      no-rotate
+      exact
+      no-passive-highlight
+      :active="isActive"
+      text-transform="none"
+      class="!font-medium py-1"
+      :class="{
+        'ml-2': link.depth === 3,
+        'ml-3': link.depth === 4,
+        'ml-4': link.depth === 5,
+        'ml-5': link.depth >= 6
+      }"
+    >
+      {{ link.text }}
+    </DBtn>
     <ul v-if="link.children && link.children.length">
       <DLayoutTableOfContentsItem
         v-for="l in link.children"

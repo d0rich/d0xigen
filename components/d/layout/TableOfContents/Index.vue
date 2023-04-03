@@ -16,14 +16,9 @@ const headersToHighlight = useTocObserver()
         class="h-full w-4 bg-white hidden md:block"
         style="clip-path: polygon(100% 0, 50% 0, 0 100%, 100% 100%)"
       />
-      <nav
-        v-if="tableOfContents"
-        class="background-container"
-      >
-        <div
-          class="absolute -z-10 inset-0 bg-black opacity-90"
-        />
-        <h2 v-if="tableOfContents.links.length" class="text-neutral-500 mb-2">
+      <nav v-if="tableOfContents" class="background-container">
+        <div class="absolute -z-10 inset-0 bg-black opacity-90" />
+        <h2 v-if="tableOfContents.links.length" class="text-white mb-2">
           On this page:
         </h2>
         <ul>
