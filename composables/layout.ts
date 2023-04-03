@@ -1,7 +1,7 @@
 import { Toc, TocLink } from '@nuxt/content/dist/runtime/types'
 
 export const useDocsLayoutState = () => ({
-  showContentTree: useState('layout/docs/showContentTree', () => true),
+  showContentTree: useState('layout/docs/showContentTree', () => false),
   tableOfContents: useState<Toc | null>(
     'layout/docs/tableOfContents',
     () => null
