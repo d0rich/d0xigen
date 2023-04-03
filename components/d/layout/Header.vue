@@ -12,7 +12,7 @@ const { showContentTree } = useDocsLayoutState()
   <DWrapShape
     tag="header"
     class="fixed top-0 z-50 left-0 right-0"
-    shape-class="bg-black"
+    shape-class="bg-white dark:bg-black"
     :shape-style="{
       clipPath: 'polygon(0 0, 100% 0, 100% calc(100% - 1rem), 0 100%)'
     }"

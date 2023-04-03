@@ -19,7 +19,7 @@ const { showContentTree } = useDocsLayoutState()
     <div class="h-full grid grid-cols-[1fr,_auto]">
       <nav class="background-container">
         <div
-          class="absolute -z-10 inset-0 bg-green-950 opacity-95 backdrop-saturate-0 backdrop-brightness-50"
+          class="absolute -z-10 inset-0 bg-green-400 dark:bg-green-950 opacity-80 dark:opacity-95 backdrop-saturate-0 backdrop-brightness-50"
         />
         <ContentNavigation v-slot="{ navigation }: { navigation: DNavItem[] }">
           <ul>
@@ -32,7 +32,7 @@ const { showContentTree } = useDocsLayoutState()
         </ContentNavigation>
       </nav>
       <div
-        class="h-full w-4 bg-white"
+        class="h-full w-4 bg-black dark:bg-white"
         style="clip-path: polygon(0 0, 50% 0, 100% 100%, 0 100%)"
       />
     </div>

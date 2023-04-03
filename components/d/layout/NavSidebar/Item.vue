@@ -18,7 +18,7 @@ const { showContentTree } = useDocsLayoutState()
     <DBtn
       :to="navItem._path"
       highlight="composite-list-item"
-      color-class="bg-black"
+      color-class="bg-neutral-300 dark:bg-black"
       no-rotate
       text-transform="none"
       class="!font-medium"
