@@ -6,10 +6,11 @@ export default {
 
 <template>
   <DLayoutHeader />
-  <div class="flex justify-around w-fit flex-col-reverse md:flex-row">
+  <div class="flex justify-between w-full flex-col-reverse md:flex-row">
     <DLayoutNavSidebar />
     <main class="pt-24 min-h-[150vh]">
       <slot />
     </main>
+    <div />
   </div>
 </template>
