@@ -38,5 +38,8 @@ export default defineNuxtConfig({
         }
       }
     }
+  },
+  pinceau: {
+    preflight: false
   }
 })
