@@ -9,11 +9,12 @@ definePageMeta({
   layout: 'docs'
 })
 const route = useRoute()
-// const toc = useToc()
+const { tableOfContents } = useDocsLayoutState()
 const { data: doc } = await useAsyncData('page-data' + route.path, () => {
   return queryContent(route.path).findOne()
 })
-// toc.value = doc.value?.body?.toc ?? null
+
+tableOfContents.value = doc.value?.body?.toc ?? null
 </script>
 
 <template>

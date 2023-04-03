@@ -11,6 +11,6 @@ export default {
     <main class="pt-24 min-h-[150vh]">
       <slot />
     </main>
-    <div />
+    <DLayoutTableOfContents />
   </div>
 </template>
