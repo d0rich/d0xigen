@@ -31,6 +31,7 @@ const { showContentTree } = useDocsLayoutState()
         <DAnimationHypnosis class="inline-block w-12 -my-2" />
         <span class="pointer-events-none">d0rich-docs</span>
       </NuxtLink>
+      <DLayoutThemeSwitch class="float-right" />
     </nav>
   </DWrapShape>
 </template>
