@@ -26,7 +26,7 @@ export default defineComponent({
   <li>
     <a :href="'#' + link.id">
       <div
-        class="hover:translate-x-2 py-1 transition-all"
+        class="py-1 transition-all"
         :class="{
           'text-green-400': isActive,
           'font-semibold': link.depth === 2,

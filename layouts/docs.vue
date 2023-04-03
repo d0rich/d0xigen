@@ -6,9 +6,9 @@ export default {
 
 <template>
   <DLayoutHeader />
-  <div class="flex justify-between w-full flex-col-reverse md:flex-row">
+  <div class="flex justify-between w-full flex-col-reverse md:flex-row gap-y-8">
     <DLayoutNavSidebar />
-    <main class="pt-24 min-h-[150vh]">
+    <main class="md:pt-24 min-h-[150vh]">
       <slot />
     </main>
     <DLayoutTableOfContents />

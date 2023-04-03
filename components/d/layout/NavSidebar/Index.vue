@@ -41,8 +41,8 @@ const { showContentTree } = useDocsLayoutState()
 
 <style scoped>
 .background-container {
+  background-image: url(../../../../assets/img/it-office.png);
   @apply h-full relative px-3 pt-20 isolate z-10
-         bg-[url(../../../../assets/img/it-office.png)]
          bg-cover bg-center;
 }
 </style>
