@@ -21,6 +21,7 @@ const { showContentTree } = useDocsLayoutState()
       <DBtn tag="button" class="!inline-block text-2xl md:!hidden" @click="showContentTree = !showContentTree">
         <Icon :name="showContentTree ? 'ic:sharp-menu-open' :'ic:sharp-menu'" />
       </DBtn>
+      <DAnimationHypnosis class="inline-block w-12 -my-2" />
       d0rich-docs
     </nav>
   </DWrapShape>
