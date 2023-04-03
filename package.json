@@ -1,5 +1,5 @@
 {
-  "name": "@d0rich/docs-theme",
+  "name": "@d0rich/d0cs",
   "version": "0.0.1",
   "main": "./nuxt.config.ts",
   "description": "🕮 Docs theme for d0rich's projects based on Nuxt 3 and Tailwind CSS",
@@ -13,7 +13,7 @@
     "tailwindcss",
     "front-end"
   ],
-  "repository": "https://github.com/d0rich/docs-theme.git",
+  "repository": "https://github.com/d0rich/d0cs.git",
   "author": {
     "name": "Nikolay Dorofeev",
     "email": "dorich2000@gmail.com",
