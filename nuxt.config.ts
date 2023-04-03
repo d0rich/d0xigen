@@ -1,9 +1,6 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  extends: [
-    '@nuxt-themes/typography',
-    '@d0rich/nuxt-design-system',
-  ],
+  extends: ['@nuxt-themes/typography', '@d0rich/nuxt-design-system'],
   app: {
     pageTransition: {
       name: 'section',

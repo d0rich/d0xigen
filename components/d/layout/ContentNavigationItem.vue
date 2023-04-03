@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { NavItem } from '@nuxt/content/dist/runtime/types'
+import { D0richNavItem } from '../../../utils/types'
 
 const props = defineProps<{
-  navItem: NavItem
+  navItem: D0richNavItem
   parentPath?: string
 }>()
 
@@ -29,10 +29,12 @@ onBeforeMount(() => {
 
 <template>
   <li>
-    <div class="grid grid-cols-[24px_1fr] items-start gap-x-4 py-1 transition-colors">
+    <div
+      class="grid grid-cols-[24px_1fr] items-start gap-x-4 py-1 transition-colors"
+    >
       <DBtn
-        tag="button"
         v-if="haveChildren"
+        tag="button"
         no-rotate
         @click="showChildren = !showChildren"
       >
@@ -64,8 +66,6 @@ onBeforeMount(() => {
           />
         </ul>
       </div>
-
     </div>
-
   </li>
 </template>

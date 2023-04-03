@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { D0richNavItem } from '../utils/types'
+
 const { showContentTree } = useDocsLayoutState()
 </script>
 
@@ -13,7 +15,9 @@ const { showContentTree } = useDocsLayoutState()
       }"
     >
       <nav class="sticky top-32">
-        <ContentNavigation v-slot="{ navigation }">
+        <ContentNavigation
+          v-slot="{ navigation }: { navigation: D0richNavItem[] }"
+        >
           <ul>
             <DLayoutContentNavigationItem
               v-for="navItem in navigation"
