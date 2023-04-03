@@ -17,7 +17,8 @@ const { showContentTree } = useDocsLayoutState()
   <li class="items-start py-1 transition-colors">
     <DBtn
       :to="navItem._path"
-      highlight="negative-list-item"
+      highlight="composite-list-item"
+      color-class="bg-black"
       no-rotate
       text-transform="none"
       class="!font-medium"

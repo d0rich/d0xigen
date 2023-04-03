@@ -45,7 +45,8 @@ function onClick() {
     <div>
       <DBtn
         :to="haveChildren ? undefined : navItem._path"
-        highlight="negative-list-item"
+        highlight="composite-list-item"
+        color-class="bg-black"
         no-rotate
         text-transform="none"
         @click="onClick"
