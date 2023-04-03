@@ -17,9 +17,7 @@ const { showContentTree } = useDocsLayoutState()
     }"
   >
     <nav class="sticky top-32">
-      <ContentNavigation
-        v-slot="{ navigation }: { navigation: DNavItem[] }"
-      >
+      <ContentNavigation v-slot="{ navigation }: { navigation: DNavItem[] }">
         <ul>
           <DLayoutNavSidebarRootItem
             v-for="navItem in navigation"
