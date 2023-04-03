@@ -35,7 +35,7 @@ tableOfContents.value = doc.value?.body?.toc ?? null
 .d-article {
   @apply prose dark:prose-invert font-sans
          md:prose-lg
-         mx-auto px-3 sm:px-0
+         mx-auto sm:px-0
          dark:prose-headings:text-cyan-400 dark:prose-a:text-inherit
          dark:prose-p:first-letter:bg-cyan-800
          dark:prose-blockquote:border-cyan-400

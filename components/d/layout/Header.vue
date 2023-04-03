@@ -20,15 +20,17 @@ const { showContentTree } = useDocsLayoutState()
     <nav class="p-4 font-serif font-semibold">
       <DBtn
         tag="button"
-        class="!inline-block text-2xl md:!hidden"
+        class="!inline-block text-2xl lg:!hidden"
         @click="showContentTree = !showContentTree"
       >
         <Icon
           :name="showContentTree ? 'ic:sharp-menu-open' : 'ic:sharp-menu'"
         />
       </DBtn>
-      <DAnimationHypnosis class="inline-block w-12 -my-2" />
-      d0rich-docs
+      <NuxtLink to="/">
+        <DAnimationHypnosis class="inline-block w-12 -my-2" />
+        <span class="pointer-events-none">d0rich-docs</span>
+      </NuxtLink>
     </nav>
   </DWrapShape>
 </template>
