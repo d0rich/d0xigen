@@ -18,8 +18,14 @@ const { showContentTree } = useDocsLayoutState()
     }"
   >
     <nav class="p-4 font-serif font-semibold">
-      <DBtn tag="button" class="!inline-block text-2xl md:!hidden" @click="showContentTree = !showContentTree">
-        <Icon :name="showContentTree ? 'ic:sharp-menu-open' :'ic:sharp-menu'" />
+      <DBtn
+        tag="button"
+        class="!inline-block text-2xl md:!hidden"
+        @click="showContentTree = !showContentTree"
+      >
+        <Icon
+          :name="showContentTree ? 'ic:sharp-menu-open' : 'ic:sharp-menu'"
+        />
       </DBtn>
       <DAnimationHypnosis class="inline-block w-12 -my-2" />
       d0rich-docs
