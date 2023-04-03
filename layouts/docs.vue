@@ -6,9 +6,9 @@ export default {
 
 <template>
   <DLayoutHeader />
-  <div class="pt-24 flex justify-around w-fit flex-col-reverse md:flex-row">
+  <div class="flex justify-around w-fit flex-col-reverse md:flex-row">
     <DLayoutNavSidebar />
-    <main class="min-h-[150vh]">
+    <main class="pt-24 min-h-[150vh]">
       <slot />
     </main>
   </div>
