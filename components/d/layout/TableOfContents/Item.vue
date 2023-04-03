@@ -28,7 +28,7 @@ export default defineComponent({
       <div
         class="hover:translate-x-2 py-1 transition-all"
         :class="{
-          'text-accent-700': isActive,
+          'text-green-400': isActive,
           'font-semibold': link.depth === 2,
           'pl-2': link.depth === 3,
           'pl-3': link.depth === 4,
@@ -40,7 +40,7 @@ export default defineComponent({
       </div>
     </a>
     <ul v-if="link.children && link.children.length">
-      <TableOfContentsItem
+      <DLayoutTableOfContentsItem
         v-for="l in link.children"
         :key="l.id"
         :active="active"
