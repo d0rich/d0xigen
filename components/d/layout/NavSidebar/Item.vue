@@ -1,8 +1,12 @@
-<script setup lang="ts">
-import { D0richNavItem } from '../../../utils/types'
+<script lang="ts">
+export default {
+  name: 'DLayoutNavSidebarItem'
+}
+</script>
 
+<script setup lang="ts">
 defineProps<{
-  navItem: D0richNavItem
+  navItem: DNavItem
   parentPath?: string
 }>()
 

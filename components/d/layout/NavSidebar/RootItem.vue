@@ -1,8 +1,12 @@
-<script setup lang="ts">
-import { D0richNavItem } from '../../../utils/types'
+<script lang="ts">
+export default {
+  name: 'DLayoutNavSidebarRootItem'
+}
+</script>
 
+<script setup lang="ts">
 const props = defineProps<{
-  navItem: D0richNavItem
+  navItem: DNavItem
   parentPath?: string
 }>()
 
@@ -53,7 +57,7 @@ function onClick() {
         </div>
       </DBtn>
       <ul v-show="haveChildren && showChildren" class="pl-8">
-        <DLayoutContentNavigationItem
+        <DLayoutNavSidebarItem
           v-for="child in navItem.children"
           :key="child._path"
           :nav-item="child"
