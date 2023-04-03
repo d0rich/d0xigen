@@ -19,7 +19,7 @@ const { showContentTree } = useDocsLayoutState()
           v-slot="{ navigation }: { navigation: D0richNavItem[] }"
         >
           <ul>
-            <DLayoutContentNavigationItem
+            <DLayoutContentNavigationRootItem
               v-for="navItem in navigation"
               :key="navItem._path"
               :nav-item="navItem"
