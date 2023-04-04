@@ -48,6 +48,7 @@
     "@d0rich/nuxt-design-system": "^0.5.9",
     "dateformat": "^5.0.3",
     "gsap": "npm:@gsap/shockingly@^3.11.5",
+    "mermaid": "^10.0.2",
     "rehype-external-links": "^2.0.1",
     "vue-gtag": "^2.0.1"
   }
