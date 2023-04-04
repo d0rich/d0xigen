@@ -9,7 +9,7 @@ export default defineNuxtPlugin(() => {
 
   watch(colorMode, (mode) => {
     mermaid.initialize({
-      theme: colorMode.value
+      theme: mode.value
     })
   })
 })
