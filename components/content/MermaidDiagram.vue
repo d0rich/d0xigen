@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import mermaid from 'mermaid'
 
-defineProps<{
+const props = defineProps<{
   code: string
 }>()
 
@@ -16,10 +16,13 @@ onMounted(async () => {
     isHidden.value = false
   }
 })
+const decodedCode = computed(() => {
+  return atob(props.code)
+})
 </script>
 
 <template>
   <pre :class="{
     'opacity-0': isHidden,
-  }" ref="codeBlock"><slot/></pre>
+  }" ref="codeBlock" v-text="decodedCode"></pre>
 </template>
