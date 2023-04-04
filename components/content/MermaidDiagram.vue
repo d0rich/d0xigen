@@ -5,10 +5,15 @@ const props = defineProps<{
   code: string
 }>()
 
+const decodedCode = computed(() => {
+  return atob(props.code)
+})
+
 const codeBlock = ref<HTMLPreElement | null>(null)
 const isHidden = ref(true)
 
-useSafeOnMounted(codeBlock as Ref<HTMLElement>, async () => {
+async function renderMermaidDiagram() {
+  isHidden.value = true
   if (codeBlock.value) {
     await mermaid.run({
       nodes: [codeBlock.value],
@@ -16,18 +21,19 @@ useSafeOnMounted(codeBlock as Ref<HTMLElement>, async () => {
     })
     isHidden.value = false
   }
-})
-const decodedCode = computed(() => {
-  return atob(props.code)
+}
+
+useSafeOnMounted(codeBlock as Ref<HTMLElement>, () => {
+  renderMermaidDiagram()
 })
 </script>
 
 <template>
-  <pre
+  <figure
     ref="codeBlock"
     :class="{
       'opacity-0': isHidden
     }"
     v-text="decodedCode"
-  ></pre>
+  ></figure>
 </template>
