@@ -1,8 +1,8 @@
 {
-  "name": "@d0rich/d0cs",
+  "name": "d0xigen",
   "version": "0.0.1",
   "main": "./nuxt.config.ts",
-  "description": "🕮 Docs theme for d0rich's projects based on Nuxt 3 and Tailwind CSS",
+  "description": "🌬🕮 Documentation theme created to breathe life into d0rich's projects. Based on Nuxt 3 and Tailwind CSS.",
   "keywords": [
     "docs",
     "nuxt",
