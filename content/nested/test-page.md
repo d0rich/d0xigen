@@ -20,17 +20,15 @@ export default defineNuxtConfig({
 ## Mermaid
 
 ```mermaid
-flowchart TD
-    B["fab:fa-twitter for peace"]
-    B-->C[fa:fa-ban forbidden]
-    B-->D(fa:fa-spinner)
-    B-->E(A fa:fa-camera-retro perhaps?)
+sequenceDiagram
+    Alice->>John: Hello John, how are you?
+    John-->>Alice: Great!
+    Alice-)John: See you later!
 ```
 
-<pre class="mermaid">
+```mermaid
 flowchart TD
     B["fab:fa-twitter for peace"]
     B-->C[fa:fa-ban forbidden]
     B-->D(fa:fa-spinner)
-    B-->E(A fa:fa-camera-retro perhaps?)
-</pre>
+```
