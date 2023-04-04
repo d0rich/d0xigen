@@ -1,1 +1,0 @@
-/* empty css                       */import{_ as r}from"./_plugin-vue_export-helper.c27b6911.js";import{o as t,b as o,s,r as a}from"./entry.8a765253.js";const c={},n={class:"table-wrapper"};function d(e,l){return t(),o("div",n,[s("table",null,[a(e.$slots,"default",{},void 0,!0)])])}const i=r(c,[["render",d],["__scopeId","data-v-78f198db"]]);export{i as default};
