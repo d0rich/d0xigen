@@ -1,7 +1,14 @@
 export default defineNitroPlugin((nitroApp) => {
-  nitroApp.hooks.hook('content:file:beforeParse', async (file: { _id: string, body: string }) => {
-    if (file._id.endsWith('.md')) {
-      file.body = file.body.replace(/```mermaid([\s\S]*?)```/gm, (_, code) => `<mermaid-diagram code="${Buffer.from(code.trim()).toString('base64')}"></mermaid-diagram>`)
+  nitroApp.hooks.hook(
+    'content:file:beforeParse',
+    (file: { _id: string; body: string }) => {
+      if (file._id.endsWith('.md')) {
+        const mermaidCodeRegex = /```mermaid([\s\S]*?)```/gm
+        file.body = file.body.replace(mermaidCodeRegex, (_, code) => {
+          const encodedCode = Buffer.from(code.trim()).toString('base64')
+          return `<mermaid-diagram code="${encodedCode}"></mermaid-diagram>`
+        })
+      }
     }
-  })
+  )
 })

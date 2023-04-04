@@ -19,7 +19,7 @@ function switchMode() {
 </script>
 
 <template>
-  <DBtn no-rotate @click="switchMode" class="text-xl">
+  <DBtn no-rotate class="text-xl" @click="switchMode">
     <Icon :name="currentMode?.icon || ''" />
   </DBtn>
 </template>

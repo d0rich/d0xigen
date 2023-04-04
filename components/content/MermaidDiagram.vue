@@ -22,7 +22,11 @@ const decodedCode = computed(() => {
 </script>
 
 <template>
-  <pre :class="{
-    'opacity-0': isHidden,
-  }" ref="codeBlock" v-text="decodedCode"></pre>
+  <pre
+    ref="codeBlock"
+    :class="{
+      'opacity-0': isHidden
+    }"
+    v-text="decodedCode"
+  ></pre>
 </template>
