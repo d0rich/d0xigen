@@ -13,7 +13,7 @@ npm i d0xigen
 ```ts
 // nuxt.config.ts
 export default defineNuxtConfig({
-  extends: ['d0xigen']
+  extends: ['d0xigen'] 
 })
 ```
 
@@ -26,9 +26,11 @@ sequenceDiagram
     Alice-)John: See you later!
 ```
 
+## Another mermaid
+
 ```mermaid
 flowchart TD
     B["fab:fa-twitter for peace"]
     B-->C[fa:fa-ban forbidden]
     B-->D(fa:fa-spinner)
-```
+``` 

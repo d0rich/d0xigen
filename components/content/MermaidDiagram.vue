@@ -1,13 +1,17 @@
 <script setup lang="ts">
 import mermaid from 'mermaid'
-mermaid.initialize({ startOnLoad: false, securityLevel: 'loose' })
+
+defineProps<{
+  code: string
+}>()
 
 const codeBlock = ref<HTMLPreElement | null>(null)
 const isHidden = ref(true)
 onMounted(async () => {
   if (codeBlock.value) {
     await mermaid.run({
-      nodes: [codeBlock.value]
+      nodes: [codeBlock.value],
+      suppressErrors: false
     })
     isHidden.value = false
   }
@@ -16,6 +20,6 @@ onMounted(async () => {
 
 <template>
   <pre :class="{
-    'hidden': isHidden,
+    'opacity-0': isHidden,
   }" ref="codeBlock"><slot/></pre>
 </template>
