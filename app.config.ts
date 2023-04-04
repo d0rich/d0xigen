@@ -17,7 +17,6 @@ declare module 'nuxt/schema' {
   }
 }
 
-
 export default defineAppConfig({
   d0xigen: {
     title: 'd0xigen',
@@ -25,7 +24,13 @@ export default defineAppConfig({
     url: 'https://d0xigen.d0rich.me',
     author: 'Nikolay Dorofeev',
     seo: {
-      keywords: ['documentation', 'docs', 'software development', 'd0xigen', 'd0rich']
+      keywords: [
+        'documentation',
+        'docs',
+        'software development',
+        'd0xigen',
+        'd0rich'
+      ]
     },
     og: {
       image: '/og/image.jpg'
