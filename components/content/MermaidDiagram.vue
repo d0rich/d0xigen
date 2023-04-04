@@ -7,7 +7,8 @@ const props = defineProps<{
 
 const codeBlock = ref<HTMLPreElement | null>(null)
 const isHidden = ref(true)
-onMounted(async () => {
+
+useSafeOnMounted(codeBlock as Ref<HTMLElement>, async () => {
   if (codeBlock.value) {
     await mermaid.run({
       nodes: [codeBlock.value],
