@@ -21,7 +21,7 @@ const { showContentTree } = useDocsLayoutState()
       @click="showContentTree = !showContentTree"
     />
     <DLayoutNavSidebar class="order-1" />
-    <main class="order-2 md:pt-24 px-4 md:px-6 min-h-[150vh]">
+    <main class="order-2 md:pt-24 overflow-hidden px-4 md:px-6 min-h-[150vh]">
       <slot />
     </main>
     <DLayoutTableOfContents class="order-1 md:order-3" />
@@ -31,7 +31,8 @@ const { showContentTree } = useDocsLayoutState()
 
 <style>
 ::-webkit-scrollbar {
-  width: 0.7rem;
+  width: .7rem;
+  height: .4rem;
 }
 
 .dark ::-webkit-scrollbar-track {
