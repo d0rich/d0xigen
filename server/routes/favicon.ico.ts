@@ -3,14 +3,14 @@ import pngToIco from 'png-to-ico'
 
 let cachedBuffer: Buffer | undefined
 
-export default defineEventHandler(async (event) => {
+export default defineEventHandler(async () => {
   if (await useStorage('root:public').hasItem('favicon.ico')) return
   if (cachedBuffer) {
     return cachedBuffer
   }
   const html = await $fetch('/api/__image/favicon')
   const png = await nodeHtmlToImage({
-    html: html,
+    html,
     waitUntil: 'networkidle0',
     type: 'png',
     transparent: true
