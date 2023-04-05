@@ -32,7 +32,17 @@ const appConfig = useAppConfig()
         <DAnimationHypnosis class="inline-block w-12 -my-2" />
         <span class="pointer-events-none">{{ appConfig.d0xigen.title }}</span>
       </NuxtLink>
-      <DLayoutThemeSwitch class="float-right" />
+      <div class="flex items-center gap-2 text-xl float-right">
+        <DLayoutThemeSwitch />
+        <DBtn
+          v-if="appConfig.d0xigen.social.github"
+          :href="appConfig.d0xigen.social.github"
+          target="_blank"
+          no-rotate
+        >
+          <Icon name="fa6-brands:github" />
+        </DBtn>
+      </div>
     </nav>
   </DWrapShape>
 </template>

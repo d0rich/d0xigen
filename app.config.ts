@@ -3,6 +3,9 @@ interface ThemeConfig {
   description?: string
   url?: string
   author?: string
+  social?: {
+    github?: string
+  }
   seo?: {
     keywords?: string[]
   }
@@ -23,6 +26,9 @@ export default defineAppConfig({
     description: '🌬🕮 Docs to breath life into your project',
     url: 'https://d0xigen.d0rich.me',
     author: 'Nikolay Dorofeev',
+    social: {
+      github: 'https://github.com/d0rich/d0xigen'
+    },
     seo: {
       keywords: [
         'documentation',
