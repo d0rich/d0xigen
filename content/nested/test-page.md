@@ -28,11 +28,10 @@ sequenceDiagram
     Alice-)John: See you later!
 ```
  
-## Another mermaid
+## PlantUML
 
-```mermaid
-flowchart TD
-    B["fab:fa-twitter for peace"]
-    B-->C[fa:fa-ban forbidden]
-    B-->D(fa:fa-spinner)
-``` 
+```plantuml Your title
+class SimplePlantUMLPlugin {
+    + transform(syntaxTree: AST): AST
+}
+```
