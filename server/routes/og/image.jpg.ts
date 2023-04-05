@@ -6,7 +6,7 @@ export default defineEventHandler(async (event) => {
   if (cachedBuffer) {
     return cachedBuffer
   }
-  const html = await $fetch('/og/image')
+  const html = await $fetch('/api/__image/og-image')
   const image = await nodeHtmlToImage({
     html: html,
     waitUntil: 'networkidle0',
