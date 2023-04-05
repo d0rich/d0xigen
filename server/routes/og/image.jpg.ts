@@ -3,6 +3,7 @@ import nodeHtmlToImage from 'node-html-to-image'
 let cachedBuffer: Buffer | undefined
 
 export default defineEventHandler(async (event) => {
+  if (await useStorage('root:public:og').hasItem('image.jpg')) return
   if (cachedBuffer) {
     return cachedBuffer
   }

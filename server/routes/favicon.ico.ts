@@ -4,6 +4,7 @@ import pngToIco from 'png-to-ico'
 let cachedBuffer: Buffer | undefined
 
 export default defineEventHandler(async (event) => {
+  if (await useStorage('root:public').hasItem('favicon.ico')) return
   if (cachedBuffer) {
     return cachedBuffer
   }
