@@ -16,3 +16,33 @@ export default {
     <DLayoutTableOfContents class="order-1 md:order-3" />
   </div>
 </template>
+
+<style>
+::-webkit-scrollbar {
+  width: .7rem;
+}
+
+.dark ::-webkit-scrollbar-track {
+  @apply bg-neutral-900;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  @apply bg-neutral-300;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  @apply bg-neutral-50;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-neutral-200;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-neutral-500;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-neutral-700;
+}
+</style>
