@@ -12,9 +12,6 @@ export default defineNuxtConfig({
       routes: ['/favicon.ico', '/og/image.jpg', '/CNAME']
     }
   },
-  build: {
-    transpile: ['mermaid']
-  },
   runtimeConfig: {
     public: {
       isDev: process.env.NODE_ENV === 'development',
