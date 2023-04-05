@@ -1,5 +1,6 @@
-export default defineEventHandler(() => {
+export default defineEventHandler((event) => {
   const appConfig = useAppConfig()
+  setResponseHeader(event, 'Content-Type', 'text/plain')
   const url = appConfig.d0xigen.url
   if (url.startsWith('https://')) {
     return url.slice(8).replaceAll('/', '')
