@@ -45,7 +45,7 @@ export default defineAppConfig({
       image: '/og/image.jpg'
     },
     features: {
-      mermaid: false
+      mermaid: true
     }
   }
 })
