@@ -7,7 +7,14 @@ export default defineNuxtConfig({
       mode: 'out-in'
     }
   },
-  // css: ['assets/css/theme.css'],
+  nitro: {
+    prerender: {
+      routes: ['/favicon.ico', '/og/image.jpg', '/CNAME']
+    }
+  },
+  build: {
+    transpile: ['mermaid']
+  },
   runtimeConfig: {
     public: {
       isDev: process.env.NODE_ENV === 'development',
