@@ -9,8 +9,11 @@ export default defineNuxtConfig({
   },
   nitro: {
     prerender: {
-      routes: ['/favicon.ico', '/og/image.jpg']
+      routes: ['/favicon.ico', '/og/image.jpg', '/CNAME']
     }
+  },
+  build: {
+    transpile: ['mermaid']
   },
   runtimeConfig: {
     public: {
