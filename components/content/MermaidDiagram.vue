@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import mermaid from 'mermaid'
+const { $mermaid } = useNuxtApp()
 
 const props = defineProps<{
   code: string
@@ -15,7 +15,7 @@ const isHidden = ref(true)
 async function renderMermaidDiagram() {
   isHidden.value = true
   if (codeBlock.value) {
-    await mermaid.run({
+    await $mermaid.run({
       nodes: [codeBlock.value],
       suppressErrors: false
     })

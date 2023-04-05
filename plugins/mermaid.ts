@@ -1,7 +1,19 @@
-import mermaid from 'mermaid'
+import type mermaid from 'mermaid'
 
-export default defineNuxtPlugin(() => {
+declare module '#app' {
+  interface NuxtApp {
+    $mermaid: typeof mermaid
+  }
+}
+declare module 'vue' {
+  interface ComponentCustomProperties {
+    $mermaid: typeof mermaid
+  }
+}
+
+export default defineNuxtPlugin(async () => {
   const colorMode = useColorMode()
+  const { default: mermaid } = await import('mermaid')
   mermaid.initialize({
     startOnLoad: false,
     theme: colorMode.value
@@ -12,4 +24,10 @@ export default defineNuxtPlugin(() => {
       theme: mode.value
     })
   })
+
+  return {
+    provide: {
+      mermaid: mermaid
+    }
+  }
 })
