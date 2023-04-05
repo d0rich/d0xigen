@@ -9,13 +9,6 @@ const { showContentTree } = useDocsLayoutState()
 </script>
 
 <template>
-  <div
-    class="fixed z-10 inset-0 bg-black opacity-70 lg:hidden transition-transform"
-    :class="{
-      '-translate-x-[100vw]': !showContentTree
-    }"
-    @click="showContentTree = !showContentTree"
-  />
   <aside
     class="fixed z-10 inset-0 h-screen max-w-[90%] lg:sticky lg:w-72 transition-all"
     :class="{
