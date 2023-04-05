@@ -6,6 +6,7 @@ export default {
 
 <script setup lang="ts">
 const { showContentTree } = useDocsLayoutState()
+const appConfig = useAppConfig()
 </script>
 
 <template>
@@ -29,7 +30,7 @@ const { showContentTree } = useDocsLayoutState()
       </DBtn>
       <NuxtLink to="/">
         <DAnimationHypnosis class="inline-block w-12 -my-2" />
-        <span class="pointer-events-none">d0rich-docs</span>
+        <span class="pointer-events-none">{{ appConfig.d0xigen.title }}</span>
       </NuxtLink>
       <DLayoutThemeSwitch class="float-right" />
     </nav>
