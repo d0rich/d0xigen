@@ -8,7 +8,7 @@ export default defineEventHandler(async () => {
   if (cachedBuffer) {
     return cachedBuffer
   }
-  const html = await $fetch('/api/__image/favicon')
+  const html = await $fetch('/api/_d0xigen/image/favicon')
   const png = await nodeHtmlToImage({
     html,
     waitUntil: 'networkidle0',

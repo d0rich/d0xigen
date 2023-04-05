@@ -20,15 +20,16 @@
     "url": "https://d0rich.me"
   },
   "scripts": {
-    "lint:ts": "nuxi typecheck",
+    "prepare": "nuxi prepare && nuxi prepare .docs",
     "lint:js": "eslint --ext \".js,.ts,.vue\" --ignore-path .gitignore .",
     "lint:prettier": "prettier --check .",
-    "lint": "npm run lint:ts && npm run lint:js && npm run lint:prettier",
+    "lint": "npm run lint:js && npm run lint:prettier",
     "lintfix": "prettier --write --list-different . && eslint --ext \".js,.ts,.vue\" --ignore-path .gitignore . --fix",
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview"
+    "check": "nuxi typecheck",
+    "build": "nuxt build .docs/",
+    "dev": "nuxt dev .docs/",
+    "generate": "nuxt generate .docs/",
+    "preview": "nuxt preview .docs/"
   },
   "devDependencies": {
     "@nuxt-themes/typography": "^0.11.0",
