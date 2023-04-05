@@ -19,7 +19,7 @@ export default {
 
 <style>
 ::-webkit-scrollbar {
-  width: .7rem;
+  width: 0.7rem;
 }
 
 .dark ::-webkit-scrollbar-track {
