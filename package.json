@@ -50,6 +50,7 @@
     "gsap": "npm:@gsap/shockingly@^3.11.5",
     "mermaid": "^10.1.0",
     "node-html-to-image": "^3.3.0",
+    "png-to-ico": "^2.1.8",
     "rehype-external-links": "^2.0.1",
     "vue-gtag": "^2.0.1"
   }
