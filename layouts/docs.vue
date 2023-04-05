@@ -26,6 +26,7 @@ const { showContentTree } = useDocsLayoutState()
     </main>
     <DLayoutTableOfContents class="order-1 md:order-3" />
   </div>
+  <DLayoutFooter />
 </template>
 
 <style>
