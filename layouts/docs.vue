@@ -31,8 +31,8 @@ const { showContentTree } = useDocsLayoutState()
 
 <style>
 ::-webkit-scrollbar {
-  width: .7rem;
-  height: .4rem;
+  width: 0.7rem;
+  height: 0.4rem;
 }
 
 .dark ::-webkit-scrollbar-track {

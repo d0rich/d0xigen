@@ -10,7 +10,7 @@ const { showContentTree } = useDocsLayoutState()
 
 <template>
   <aside
-    class="fixed z-10 inset-0 h-screen max-w-[90%] lg:sticky lg:w-72 transition-all"
+    class="fixed z-10 inset-0 h-screen max-w-[90%] lg:sticky lg:w-72 lg:z-0 transition-all"
     :class="{
       '-left-72 w-0': !showContentTree,
       'left-0 w-screen': showContentTree
