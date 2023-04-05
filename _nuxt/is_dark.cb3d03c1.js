@@ -1,0 +1,1 @@
+import{c1 as s,c2 as r}from"./entry.78513f6e.js";const e=n=>{const{r:t,g:o,b:a}=s.parse(n),c=.2126*r.channel.toLinear(t)+.7152*r.channel.toLinear(o)+.0722*r.channel.toLinear(a);return r.lang.round(c)},i=e,l=n=>i(n)>=.5,u=l,h=n=>!u(n),L=h;export{L as i};
