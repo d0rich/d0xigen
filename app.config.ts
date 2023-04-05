@@ -12,6 +12,9 @@ interface ThemeConfig {
   og?: {
     image?: string
   }
+  features?: {
+    mermaid?: boolean
+  }
 }
 
 declare module 'nuxt/schema' {
@@ -40,6 +43,9 @@ export default defineAppConfig({
     },
     og: {
       image: '/og/image.jpg'
+    },
+    features: {
+      mermaid: false
     }
   }
 })

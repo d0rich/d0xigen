@@ -2,16 +2,24 @@ import type mermaid from 'mermaid'
 
 declare module '#app' {
   interface NuxtApp {
-    $mermaid: typeof mermaid
+    $mermaid: typeof mermaid | undefined
   }
 }
 declare module 'vue' {
   interface ComponentCustomProperties {
-    $mermaid: typeof mermaid
+    $mermaid: typeof mermaid | undefined
   }
 }
 
 export default defineNuxtPlugin(async () => {
+  const appConfig = useAppConfig()
+  if (!appConfig.d0xigen.features.mermaid) {
+    return {
+      provide: {
+        mermaid: undefined
+      }
+    }
+  }
   const colorMode = useColorMode()
   const { default: mermaid } = await import('mermaid')
   mermaid.initialize({
@@ -27,7 +35,7 @@ export default defineNuxtPlugin(async () => {
 
   return {
     provide: {
-      mermaid: mermaid
+      mermaid: mermaid as typeof mermaid | undefined
     }
   }
 })

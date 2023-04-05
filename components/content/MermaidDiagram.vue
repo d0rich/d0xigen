@@ -14,7 +14,7 @@ const isHidden = ref(true)
 
 async function renderMermaidDiagram() {
   isHidden.value = true
-  if (codeBlock.value) {
+  if (codeBlock.value && $mermaid) {
     await $mermaid.run({
       nodes: [codeBlock.value],
       suppressErrors: false
