@@ -31,7 +31,6 @@ const appConfig = useAppConfig()
           eveloped by d0rich
         </NuxtLink>
         <div class="flex items-center gap-2 text-xl">
-          <DLayoutThemeSwitch />
           <DBtn
             v-if="appConfig.d0xigen.social.github"
             :href="appConfig.d0xigen.social.github"
