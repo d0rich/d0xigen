@@ -27,9 +27,6 @@ export default defineNuxtConfig({
     }
   },
   modules: ['@nuxt/content'],
-  plugins: [
-    // join(currentDir, './plugins/optional/mermaid.ts')
-  ],
   content: {
     documentDriven: true,
     highlight: {

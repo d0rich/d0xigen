@@ -8,7 +8,7 @@ export default defineNitroPlugin((nitroApp) => {
         const mermaidCodeRegex = /```mermaid([\s\S]*?)```/gm
         file.body = file.body.replace(mermaidCodeRegex, (_, code) => {
           const encodedCode = Buffer.from(code.trim()).toString('base64')
-          return `<mermaid-diagram code="${encodedCode}"></mermaid-diagram>`
+          return `<mermaid code="${encodedCode}"></mermaid>`
         })
       }
     }

@@ -39,10 +39,7 @@ export default defineAppConfig({
       image: '/og/image.jpg'
     },
     features: {
-      /**
-       * At the moment, you need to include/exclude mermaid plugin from imports in nuxt.config.ts in d0xigen
-       */
-      mermaid: false
+      mermaid: true
     }
   }
 })
