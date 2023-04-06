@@ -14,7 +14,11 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       routes: ['/favicon.ico', '/og/image.jpg', '/CNAME']
-    }
+    },
+    serverAssets: [{
+      baseName: 'server:templates',
+      dir: join(currentDir, './server/assets/templates')
+    }]
   },
   runtimeConfig: {
     public: {
