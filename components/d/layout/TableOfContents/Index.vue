@@ -6,12 +6,11 @@ export default {
 
 <script setup lang="ts">
 const { tableOfContents } = useDocsLayoutState()
-const root = ref<HTMLElement | null>(null)
-const headersToHighlight = useTocObserver(root as Ref<HTMLElement>)
+const headersToHighlight = useTocObserver()
 </script>
 
 <template>
-  <aside ref="root" class="top-0 md:sticky md:h-screen md:w-72">
+  <aside class="top-0 md:sticky md:h-screen md:w-72">
     <div class="h-full grid md:grid-cols-[auto,_1fr]">
       <div
         class="h-full w-4 bg-black dark:bg-white hidden md:block"
