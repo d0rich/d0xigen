@@ -9,31 +9,47 @@ const decodedCode = computed(() => {
   return atob(props.code)
 })
 
-const codeBlock = ref<HTMLPreElement | null>(null)
-const isHidden = ref(true)
+const root = ref<HTMLElement | null>(null)
+const codeBlock = ref<HTMLElement | null>(null)
+const isDiagramLoading = ref(true)
 
 async function renderMermaidDiagram() {
-  isHidden.value = true
+  isDiagramLoading.value = true
   if (codeBlock.value && $mermaid) {
-    await $mermaid.run({
-      nodes: [codeBlock.value],
-      suppressErrors: false
-    })
-    isHidden.value = false
+    try {
+      await $mermaid.run({
+        nodes: [codeBlock.value],
+        suppressErrors: false
+      })
+    } catch(e){}
+
+    isDiagramLoading.value = false
   }
 }
 
-useSafeOnMounted(codeBlock as Ref<HTMLElement>, () => {
+useSafeOnMounted(root as Ref<HTMLElement>, () => {
   renderMermaidDiagram()
 })
 </script>
 
 <template>
-  <figure
-    ref="codeBlock"
-    :class="{
-      'opacity-0': isHidden
-    }"
-    v-text="decodedCode"
-  ></figure>
+  <figure ref="root" class="relative">
+    <pre
+      ref="codeBlock"
+      :class="{
+        'opacity-0': isDiagramLoading
+      }"
+      v-text="decodedCode"
+    ></pre>
+    <div>
+      <div
+        class="absolute inset-0 font-serif"
+        v-if="isDiagramLoading"
+      >
+        <DAnimationSpinner class="max-h-[calc(100%_-_2rem)]" />
+        Mermaid diagram is loading...
+      </div>
+    </div>
+  </figure>
+
 </template>
