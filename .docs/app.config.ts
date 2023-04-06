@@ -15,6 +15,11 @@ export default defineAppConfig({
         'd0xigen',
         'd0rich'
       ]
+    },
+    features: {
+      gtag: {
+        id: 'G-VF1B9L1E6V'
+      }
     }
   }
 })
