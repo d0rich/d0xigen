@@ -14,6 +14,9 @@ interface ThemeConfig {
   }
   features?: {
     mermaid?: boolean
+    gtag?: {
+      id?: string
+    }
   }
 }
 
@@ -39,7 +42,10 @@ export default defineAppConfig({
       image: '/og/image.jpg'
     },
     features: {
-      mermaid: true
+      mermaid: true,
+      gtag: {
+        id: 'G-XXXXXXXXXX'
+      }
     }
   }
 })
