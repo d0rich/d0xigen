@@ -15,10 +15,12 @@ export default defineNuxtConfig({
     prerender: {
       routes: ['/favicon.ico', '/og/image.jpg', '/CNAME']
     },
-    serverAssets: [{
-      baseName: 'server:templates',
-      dir: join(currentDir, './server/assets/templates')
-    }]
+    serverAssets: [
+      {
+        baseName: 'server:templates',
+        dir: join(currentDir, './server/assets/templates')
+      }
+    ]
   },
   runtimeConfig: {
     public: {

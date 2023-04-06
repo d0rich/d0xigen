@@ -1,7 +1,9 @@
 <template>
   <section>
     <div class="flex justify-center items-center">
-      <div class="text-6xl font-bold text-red-600 dark:text-red-300 pr-6">404</div>
+      <div class="text-6xl font-bold text-red-600 dark:text-red-300 pr-6">
+        404
+      </div>
       <div class="border-l border-neutral-500 pl-6">
         <h1 class="text-4xl font-bold mb-3">Page not found</h1>
         <p class="text-gray-500 dark:text-gray-400">

@@ -21,7 +21,7 @@ async function renderMermaidDiagram() {
         nodes: [codeBlock.value],
         suppressErrors: false
       })
-    } catch(e){}
+    } catch (e) {}
 
     isDiagramLoading.value = false
   }
@@ -42,14 +42,10 @@ useSafeOnMounted(root as Ref<HTMLElement>, () => {
       v-text="decodedCode"
     ></pre>
     <div>
-      <div
-        class="absolute inset-0 font-serif"
-        v-if="isDiagramLoading"
-      >
+      <div v-if="isDiagramLoading" class="absolute inset-0 font-serif">
         <DAnimationSpinner class="max-h-[calc(100%_-_2rem)]" />
         Mermaid diagram is loading...
       </div>
     </div>
   </figure>
-
 </template>

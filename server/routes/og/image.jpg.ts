@@ -1,3 +1,3 @@
-import { getOgImageJpeg } from "../../utils/og-image"
+import { getOgImageJpeg } from '../../utils/og-image'
 
-export default defineEventHandler(async () => getOgImageJpeg())
+export default defineEventHandler(() => getOgImageJpeg())
