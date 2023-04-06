@@ -8,11 +8,11 @@ on:
 jobs:
   publish-npm:
     name: Publish to NPM
+    runs-on: ubuntu-20.04
     if: github.repository_owner == 'd0rich'
     outputs:
       version: ${{ steps.publish.outputs.version }}
       type: ${{ steps.publish.outputs.type }}
-    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -30,7 +30,7 @@ jobs:
           token: ${{ secrets.NPM_PUBLISH_TOKEN }}
 
   release:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     needs: [publish-npm]
     if: needs.publish-npm.outputs.type != 'none'
     steps:
