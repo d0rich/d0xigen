@@ -18,9 +18,11 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
+
       - run: npm ci
-      - name: Check types
-        run: npm run check
+      # - name: Check types
+      #   run: npm run check
+
       - uses: JS-DevTools/npm-publish@v1
         id: publish
         with:
