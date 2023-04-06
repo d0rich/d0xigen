@@ -16,11 +16,12 @@ const { data: doc, error } = await useAsyncData('page-data' + route.path, () =>
 
 function setToc(){
   tableOfContents.value = doc.value?.body?.toc ?? null
-  console.log('TableOfContents: ', tableOfContents.value)
 }
 
+// It is main ToC setter
 setToc()
 
+// For some reason, ToC dissappears on initial load on page with Mermaid diagram. So set ToC again on mounted.
 onMounted(() => {
   setToc()
 })

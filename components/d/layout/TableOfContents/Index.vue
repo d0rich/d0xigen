@@ -8,9 +8,6 @@ export default {
 const { tableOfContents } = useDocsLayoutState()
 const root = ref<HTMLElement | null>(null)
 const headersToHighlight = useTocObserver(root as Ref<HTMLElement>)
-watch(tableOfContents, (val) => {
-  console.log('TableOfContents: ', val)
-})
 </script>
 
 <template>
