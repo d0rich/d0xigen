@@ -9,6 +9,7 @@ const decodedCode = computed(() => {
   return atob(props.code)
 })
 
+const root = ref<HTMLElement | null>(null)
 const codeBlock = ref<HTMLElement | null>(null)
 const isDiagramLoading = ref(true)
 
@@ -28,13 +29,15 @@ async function renderMermaidDiagram() {
   }
 }
 
-onMounted(() => {
-  renderMermaidDiagram()
+useSafeOnMounted(root as Ref<HTMLElement>, () => {
+  setTimeout(() => {
+    renderMermaidDiagram()
+  }, 1000)
 })
 </script>
 
 <template>
-  <figure class="relative">
+  <figure ref="root" class="relative">
     <pre
       ref="codeBlock"
       :class="{
