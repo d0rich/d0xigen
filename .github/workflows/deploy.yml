@@ -28,8 +28,8 @@ jobs:
       - name: Prepare Nuxt
         run: npx nuxi prepare
 
-      # - name: Test
-      #   run: npm run test
+      - name: Check types
+        run: npm run check
 
       - name: Build Nuxt 3 static site
         run: npm run generate
