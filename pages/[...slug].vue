@@ -14,7 +14,16 @@ const { data: doc, error } = await useAsyncData('page-data' + route.path, () =>
   queryContent(route.path).findOne()
 )
 
-tableOfContents.value = doc.value?.body?.toc ?? null
+function setToc(){
+  tableOfContents.value = doc.value?.body?.toc ?? null
+  console.log('TableOfContents: ', tableOfContents.value)
+}
+
+setToc()
+
+onMounted(() => {
+  setToc()
+})
 </script>
 
 <template>
