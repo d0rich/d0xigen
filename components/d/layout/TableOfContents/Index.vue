@@ -16,12 +16,12 @@ const headersToHighlight = useTocObserver()
         class="h-full w-4 bg-black dark:bg-white hidden md:block"
         style="clip-path: polygon(100% 0, 50% 0, 0 100%, 100% 100%)"
       />
-      <nav v-if="tableOfContents" class="background-container">
+      <nav class="background-container">
         <div class="absolute -z-10 inset-0 bg-white dark:bg-black opacity-90" />
-        <h2 v-if="tableOfContents.links.length" class="mb-2">On this page:</h2>
+        <h2 v-if="tableOfContents?.links.length" class="mb-2">On this page:</h2>
         <ul>
           <DLayoutTableOfContentsItem
-            v-for="link in tableOfContents.links"
+            v-for="link in tableOfContents?.links"
             :key="link.id"
             :link="link"
             :active="headersToHighlight"

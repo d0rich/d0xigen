@@ -10,7 +10,7 @@ definePageMeta({
 })
 const route = useRoute()
 const { tableOfContents } = useDocsLayoutState()
-const { data: doc } = await useAsyncData('page-data' + route.path, () =>
+const { data: doc, error } = await useAsyncData('page-data' + route.path, () =>
   queryContent(route.path).findOne()
 )
 
@@ -24,10 +24,15 @@ tableOfContents.value = doc.value?.body?.toc ?? null
       :title="doc.title"
       :description="doc.description"
     />
+    <DAsyncSafeMeta
+      v-else-if="error"
+      title="Page not found"
+    />
     <NuxtLayout>
       <ContentRenderer v-if="doc && doc._type === 'markdown'" :value="doc">
         <ContentRendererMarkdown tag="article" class="d-article" :value="doc" />
       </ContentRenderer>
+      <DError404 class="mt-[20vh]" v-else-if="error" />
     </NuxtLayout>
   </div>
 </template>
