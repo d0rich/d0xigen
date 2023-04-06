@@ -11,7 +11,7 @@ const headersToHighlight = useTocObserver(root as Ref<HTMLElement>)
 </script>
 
 <template>
-  <aside class="top-0 md:sticky md:h-screen md:w-72" ref="root">
+  <aside ref="root" class="top-0 md:sticky md:h-screen md:w-72">
     <div class="h-full grid md:grid-cols-[auto,_1fr]">
       <div
         class="h-full w-4 bg-black dark:bg-white hidden md:block"
