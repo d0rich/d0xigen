@@ -10,23 +10,25 @@ const { showContentTree } = useDocsLayoutState()
 
 <template>
   <DLayoutHeader />
-  <div
-    class="grid md:grid-cols-[1fr,_auto] lg:grid-cols-[auto,_1fr,_auto] w-full gap-y-8"
-  >
+  <div class="flex flex-col justify-between min-h-screen">
     <div
-      class="fixed z-10 inset-0 bg-black opacity-70 lg:hidden transition-transform"
-      :class="{
-        '-translate-x-[100vw]': !showContentTree
-      }"
-      @click="showContentTree = !showContentTree"
-    />
-    <DLayoutNavSidebar class="order-1" />
-    <main class="order-2 md:pt-24 overflow-hidden px-4 md:px-6 pb-[50vh]">
-      <slot />
-    </main>
-    <DLayoutTableOfContents class="order-1 md:order-3" />
+      class="grid md:grid-cols-[1fr,_auto] lg:grid-cols-[auto,_1fr,_auto] w-full gap-y-8"
+    >
+      <div
+        class="fixed z-10 inset-0 bg-black opacity-70 lg:hidden transition-transform"
+        :class="{
+          '-translate-x-[100vw]': !showContentTree
+        }"
+        @click="showContentTree = !showContentTree"
+      />
+      <DLayoutNavSidebar class="order-1" />
+      <main class="order-2 md:pt-24 overflow-hidden px-4 md:px-6 pb-[50vh]">
+        <slot />
+      </main>
+      <DLayoutTableOfContents class="order-1 md:order-3" />
+    </div>
+    <DLayoutFooter />
   </div>
-  <DLayoutFooter />
 </template>
 
 <style>
