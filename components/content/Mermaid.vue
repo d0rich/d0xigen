@@ -30,7 +30,9 @@ async function renderMermaidDiagram() {
 }
 
 useSafeOnMounted(root as Ref<HTMLElement>, () => {
-  renderMermaidDiagram()
+  setTimeout(() => {
+    renderMermaidDiagram()
+  }, 1000)
 })
 </script>
 
