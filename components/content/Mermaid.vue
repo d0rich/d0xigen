@@ -19,7 +19,7 @@ async function renderMermaidDiagram() {
     try {
       await $mermaid.run({
         nodes: [codeBlock.value],
-        suppressErrors: false
+        suppressErrors: true
       })
     } catch (e) {
       console.error(e)
