@@ -54,6 +54,7 @@
     "node-html-to-image": "^3.3.0",
     "png-to-ico": "^2.1.8",
     "rehype-external-links": "^2.0.1",
+    "sitemap": "^7.1.1",
     "vue-gtag": "^2.0.1"
   }
 }
