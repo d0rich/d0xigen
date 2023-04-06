@@ -21,9 +21,7 @@ async function renderMermaidDiagram() {
         nodes: [codeBlock.value],
         suppressErrors: true
       })
-    } catch (e) {
-      console.error(e)
-    }
+    } catch (e) {}
 
     isDiagramLoading.value = false
   }

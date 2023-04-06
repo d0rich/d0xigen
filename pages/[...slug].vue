@@ -14,7 +14,7 @@ const { data: doc, error } = await useAsyncData('page-data' + route.path, () =>
   queryContent(route.path).findOne()
 )
 
-function setToc(){
+function setToc() {
   tableOfContents.value = doc.value?.body?.toc ?? null
 }
 
