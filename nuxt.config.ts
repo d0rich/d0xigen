@@ -28,6 +28,10 @@ export default defineNuxtConfig({
       isProd: process.env.NODE_ENV === 'production'
     }
   },
+  colorMode: {
+    preference: 'system',
+    fallback: 'dark'
+  },
   modules: ['@nuxt/content'],
   content: {
     documentDriven: true,
