@@ -19,7 +19,7 @@ interface ThemeConfig {
     }
   }
   d0richIndex?: {
-    complexity?: number,
+    complexity?: number
     tags?: string[]
   }
 }
