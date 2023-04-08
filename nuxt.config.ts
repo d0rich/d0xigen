@@ -13,7 +13,13 @@ export default defineNuxtConfig({
   },
   nitro: {
     prerender: {
-      routes: ['/sitemap.xml', '/favicon.ico', '/og/image.jpg', '/CNAME']
+      routes: [
+        '/sitemap.xml',
+        '/favicon.ico',
+        '/og/image.jpg',
+        '/CNAME',
+        '/_d0rich/meta.json'
+      ]
     },
     serverAssets: [
       {
