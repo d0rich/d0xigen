@@ -18,6 +18,10 @@ interface ThemeConfig {
       id?: string
     }
   }
+  d0richIndex?: {
+    complexity?: number,
+    tags?: string[]
+  }
 }
 
 declare module 'nuxt/schema' {
@@ -46,6 +50,10 @@ export default defineAppConfig({
       gtag: {
         id: 'G-XXXXXXXXXX'
       }
+    },
+    d0richIndex: {
+      complexity: undefined,
+      tags: []
     }
   }
 })
