@@ -1,0 +1,1 @@
+/* empty css                 */import{_ as e}from"./_plugin-vue_export-helper.c27b6911.js";import{o as s,b as t,p as r}from"./entry.dd75fe12.js";const a={name:"DChip"},n={class:"d-chip"};function p(o,c,i,_,d,f){return s(),t("span",n,[r(o.$slots,"default")])}const u=e(a,[["render",p]]);export{u as default};
