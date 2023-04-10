@@ -13,7 +13,7 @@ declare module 'vue' {
   }
 }
 
-export default defineNuxtPlugin(async () => {
+export default defineNuxtPlugin(() => {
   const appConfig = useAppConfig()
   if (!appConfig.d0xigen.features.mermaid) {
     return {
