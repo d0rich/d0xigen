@@ -1,4 +1,4 @@
-export default defineEventHandler((event) => {
+export default defineEventHandler(() => {
   const appConfig = useAppConfig()
   return {
     title: appConfig.d0xigen.title,
