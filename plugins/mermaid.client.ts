@@ -1,13 +1,15 @@
-import type mermaid from 'mermaid'
+import type { Mermaid } from 'mermaid'
+// @ts-ignore 2307
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs'
 
 declare module '#app' {
   interface NuxtApp {
-    $mermaid: typeof mermaid | undefined
+    $mermaid: Mermaid | undefined
   }
 }
 declare module 'vue' {
   interface ComponentCustomProperties {
-    $mermaid: typeof mermaid | undefined
+    $mermaid: Mermaid | undefined
   }
 }
 
@@ -21,7 +23,6 @@ export default defineNuxtPlugin(async () => {
     }
   }
   const colorMode = useColorMode()
-  const { default: mermaid } = await import('mermaid')
   mermaid.initialize({
     startOnLoad: false,
     theme: colorMode.value
@@ -35,7 +36,7 @@ export default defineNuxtPlugin(async () => {
 
   return {
     provide: {
-      mermaid: mermaid as typeof mermaid | undefined
+      mermaid: mermaid as Mermaid | undefined
     }
   }
 })
