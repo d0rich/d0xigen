@@ -1,6 +1,6 @@
 {
   "name": "d0xigen",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "main": "./nuxt.config.ts",
   "description": "🌬🕮 Documentation theme created to breathe life into d0rich's projects. Based on Nuxt 3 and Tailwind CSS.",
   "keywords": [
@@ -13,7 +13,7 @@
     "tailwindcss",
     "front-end"
   ],
-  "repository": "https://github.com/d0rich/d0cs.git",
+  "repository": "https://github.com/d0rich/d0xigen.git",
   "author": {
     "name": "Nikolay Dorofeev",
     "email": "dorich2000@gmail.com",
@@ -34,7 +34,6 @@
   "devDependencies": {
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@types/dateformat": "^5.0.0",
-    "@types/mermaid": "^9.2.0",
     "eslint": "^8.36.0",
     "eslint-config-prettier": "^8.7.0",
     "eslint-plugin-prettier": "^4.2.1",
@@ -44,6 +43,7 @@
   },
   "dependencies": {
     "@akebifiky/remark-simple-plantuml": "^1.0.2",
+    "@d0rich/nuxt-content-mermaid": "^0.1.0",
     "@d0rich/nuxt-design-system": "^0.6.1",
     "@nuxt-themes/typography": "^0.11.0",
     "@nuxt/content": "^2.5.2",
