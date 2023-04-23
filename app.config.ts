@@ -13,7 +13,6 @@ interface ThemeConfig {
     image?: string
   }
   features?: {
-    mermaid?: boolean
     gtag?: {
       id?: string
     }
@@ -46,7 +45,6 @@ export default defineAppConfig({
       image: '/og/image.jpg'
     },
     features: {
-      mermaid: true,
       gtag: {
         id: 'G-XXXXXXXXXX'
       }
@@ -55,5 +53,8 @@ export default defineAppConfig({
       complexity: undefined,
       tags: []
     }
+  },
+  contentMermaid: {
+    color: '@nuxtjs/color-mode'
   }
 })
