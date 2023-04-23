@@ -6,9 +6,6 @@ on:
   # schedule:
   #   - cron: "0 3 * * *"
 
-env:
-  GSAP_TOKEN: ${{secrets.GSAP_TOKEN}}
-
 jobs:
   build-and-deploy:
     runs-on: ubuntu-20.04
