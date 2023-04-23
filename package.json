@@ -1,6 +1,6 @@
 {
   "name": "d0xigen",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "main": "./nuxt.config.ts",
   "description": "🌬🕮 Documentation theme created to breathe life into d0rich's projects. Based on Nuxt 3 and Tailwind CSS.",
   "keywords": [
@@ -13,7 +13,7 @@
     "tailwindcss",
     "front-end"
   ],
-  "repository": "https://github.com/d0rich/d0cs.git",
+  "repository": "https://github.com/d0rich/d0xigen.git",
   "author": {
     "name": "Nikolay Dorofeev",
     "email": "dorich2000@gmail.com",
