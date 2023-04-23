@@ -4,7 +4,11 @@ const currentDir = dirname(fileURLToPath(import.meta.url))
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  extends: ['@d0rich/nuxt-content-mermaid', '@nuxt-themes/typography', '@d0rich/nuxt-design-system'],
+  extends: [
+    '@d0rich/nuxt-content-mermaid',
+    '@nuxt-themes/typography',
+    '@d0rich/nuxt-design-system'
+  ],
   app: {
     pageTransition: {
       name: 'section',
