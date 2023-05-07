@@ -19,6 +19,7 @@ export default defineNuxtConfig({
     prerender: {
       routes: [
         '/sitemap.xml',
+        '/robots.txt',
         '/favicon.ico',
         '/og/image.jpg',
         '/CNAME',
