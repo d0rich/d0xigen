@@ -1,3 +1,5 @@
+import type { RobotsTxtOptions } from './server/routes/robots.txt'
+
 interface ThemeConfig {
   title?: string
   description?: string
@@ -8,6 +10,7 @@ interface ThemeConfig {
   }
   seo?: {
     keywords?: string[]
+    robots?: RobotsTxtOptions[]
   }
   og?: {
     image?: string
@@ -39,7 +42,8 @@ export default defineAppConfig({
       github: undefined
     },
     seo: {
-      keywords: []
+      keywords: [],
+      robots: [{ UserAgent: '*' }, { Allow: '/' }]
     },
     og: {
       image: '/og/image.jpg'
@@ -53,7 +57,7 @@ export default defineAppConfig({
       complexity: undefined,
       tags: []
     }
-  },
+  } as ThemeConfig,
   contentMermaid: {
     color: '@nuxtjs/color-mode'
   }
