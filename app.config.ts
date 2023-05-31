@@ -1,10 +1,11 @@
 import type { RobotsTxtOptions } from './server/routes/robots.txt'
+import type { DeepPartial } from './utils/DeepPartial'
 
 interface ThemeConfig {
-  title?: string
-  description?: string
-  url?: string
-  author?: string
+  title: string
+  description: string
+  url: string
+  author: string
   social?: {
     github?: string
   }
@@ -12,8 +13,8 @@ interface ThemeConfig {
     keywords?: string[]
     robots?: RobotsTxtOptions[]
   }
-  og?: {
-    image?: string
+  og: {
+    image: string
   }
   features?: {
     gtag?: {
@@ -22,13 +23,14 @@ interface ThemeConfig {
   }
   d0richIndex?: {
     complexity?: number
-    tags?: string[]
+    tags: string[]
+    freezeUpdateDate?: Date
   }
 }
 
 declare module 'nuxt/schema' {
   interface AppConfigInput {
-    d0xigen?: ThemeConfig
+    d0xigen?: DeepPartial<ThemeConfig>
   }
 }
 
@@ -54,7 +56,6 @@ export default defineAppConfig({
       }
     },
     d0richIndex: {
-      complexity: undefined,
       tags: []
     }
   } as ThemeConfig,
