@@ -52,32 +52,16 @@ onMounted(() => {
       <ContentRenderer v-if="doc && doc._type === 'markdown'" :value="doc">
         <ContentRendererMarkdown tag="article" class="d-article" :value="doc" />
         <nav class="justify-center grid sm:grid-cols-2 gap-8 items-start mt-32">
-          <NuxtLink
+          <DLayoutSurroundDocCard
             v-if="doc.before"
-            :to="doc.before._path"
-            class="transition-transform hover:scale-90"
-          >
-            <DCard dense>
-              <DCardTitle
-                ><Icon name="ic:sharp-arrow-back-ios" />Previous</DCardTitle
-              >
-              <h4 class="text-xl font-bold">{{ doc.before.title }}</h4>
-              <p>{{ doc.before.description }}</p>
-            </DCard>
-          </NuxtLink>
-          <NuxtLink
+            :doc="doc.before"
+            direction="before"
+          />
+          <DLayoutSurroundDocCard
             v-if="doc.after"
-            :to="doc.after._path"
-            class="transition-transform hover:scale-90"
-          >
-            <DCard dense>
-              <DCardTitle
-                >Next<Icon name="ic:sharp-arrow-forward-ios"
-              /></DCardTitle>
-              <h4 class="text-xl font-bold">{{ doc.after.title }}</h4>
-              <p>{{ doc.after.description }}</p>
-            </DCard>
-          </NuxtLink>
+            :doc="doc.after"
+            direction="after"
+          />
         </nav>
       </ContentRenderer>
       <DError404 v-else-if="error" class="mt-[20vh]" />
