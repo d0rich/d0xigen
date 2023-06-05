@@ -10,8 +10,21 @@ definePageMeta({
 })
 const route = useRoute()
 const { tableOfContents } = useDocsLayoutState()
-const { data: doc, error } = await useAsyncData('page-data' + route.path, () =>
-  queryContent(route.path).findOne()
+const { data: doc, error } = useAsyncData(
+  'page-data' + route.path,
+  async () => {
+    const docPromise = queryContent(route.path).findOne()
+    const surroundPromise = queryContent().findSurround(route.path, {
+      before: 1,
+      after: 1
+    })
+    const [doc, surround] = await Promise.all([docPromise, surroundPromise])
+    return {
+      ...doc,
+      before: surround[0],
+      after: surround[1]
+    }
+  }
 )
 
 function setToc() {
