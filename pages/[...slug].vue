@@ -14,10 +14,12 @@ const { data: doc, error } = useAsyncData(
   'page-data' + route.path,
   async () => {
     const docPromise = queryContent(route.path).findOne()
-    const surroundPromise = queryContent().findSurround(route.path, {
-      before: 1,
-      after: 1
-    })
+    const surroundPromise = queryContent()
+      .only(['_path', 'title', 'description'])
+      .findSurround(route.path, {
+        before: 1,
+        after: 1
+      })
     const [doc, surround] = await Promise.all([docPromise, surroundPromise])
     return {
       ...doc,
