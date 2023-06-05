@@ -16,7 +16,8 @@ const { data: doc, error } = useAsyncData(
     const docPromise = queryContent(route.path).findOne()
     const surroundPromise = queryContent()
       .only(['_path', 'title', 'description'])
-      .findSurround(route.path, {
+      // thrailing slash is removed
+      .findSurround(route.path.replace(/\/$/, ''), {
         before: 1,
         after: 1
       })
