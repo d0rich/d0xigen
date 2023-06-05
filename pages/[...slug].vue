@@ -34,17 +34,14 @@ function setToc() {
   tableOfContents.value = doc.value?.body?.toc ?? null
 }
 
-// It is main ToC setter
-setToc()
-
-// For some reason, ToC dissappears on initial load on page with Mermaid diagram. So set ToC again on mounted.
-onMounted(() => {
+const root = ref<HTMLElement>(null as any)
+useSafeOnMounted(root, () => {
   setToc()
 })
 </script>
 
 <template>
-  <div>
+  <div ref="root">
     <DAsyncSafeMeta
       v-if="doc"
       :title="doc.title"
