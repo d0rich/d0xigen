@@ -10,8 +10,23 @@ definePageMeta({
 })
 const route = useRoute()
 const { tableOfContents } = useDocsLayoutState()
-const { data: doc, error } = await useAsyncData('page-data' + route.path, () =>
-  queryContent(route.path).findOne()
+const { data: doc, error } = useAsyncData(
+  'page-data' + route.path,
+  async () => {
+    const docPromise = queryContent(route.path).findOne()
+    const surroundPromise = queryContent()
+      .only(['_path', 'title', 'description'])
+      .findSurround(route.path, {
+        before: 1,
+        after: 1
+      })
+    const [doc, surround] = await Promise.all([docPromise, surroundPromise])
+    return {
+      ...doc,
+      before: surround[0],
+      after: surround[1]
+    }
+  }
 )
 
 function setToc() {
@@ -38,6 +53,18 @@ onMounted(() => {
     <NuxtLayout>
       <ContentRenderer v-if="doc && doc._type === 'markdown'" :value="doc">
         <ContentRendererMarkdown tag="article" class="d-article" :value="doc" />
+        <nav class="justify-center grid sm:grid-cols-2 gap-8 items-start mt-32">
+          <DLayoutSurroundDocCard
+            v-if="doc.before"
+            :doc="doc.before"
+            direction="before"
+          />
+          <DLayoutSurroundDocCard
+            v-if="doc.after"
+            :doc="doc.after"
+            direction="after"
+          />
+        </nav>
       </ContentRenderer>
       <DError404 v-else-if="error" class="mt-[20vh]" />
     </NuxtLayout>
