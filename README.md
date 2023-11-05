@@ -1,3 +1,5 @@
+> This project is moved to the monorepo: https://github.com/d0rich/esprit
+
 # d0xigen
 
 Hello 👋, you are currently viewing the documentation for _d0xigen_ - UI layer for documentation to my projects. And yeah, this is me: [d0rich](https://github.com/d0rich).
